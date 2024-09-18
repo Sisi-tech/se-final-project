@@ -24,35 +24,35 @@ class TeamInfo(models.Model):
     def __str__(self):
         return self.team_name
     
-class TeamCaptain(models.Model):
-    captain_first_name = models.CharField(max_length=200)
-    captain_last_name = models.CharField(max_length=200)
-    captain_email = models.EmailField(max_length=200)
-    captain_phone = models.CharField(max_length=11)
-    co_captain_first_name = models.CharField(max_length=200)
-    co_captain_last_name = models.CharField(max_length=200)
-    co_captain_email = models.EmailField(max_length=200)
-    co_captain_phone = models.CharField(max_length=11)
+class User(models.Model):
     team_name = models.ForeignKey(TeamInfo, on_delete=models.PROTECT, default=None)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=11)
+    co_first_name = models.CharField(max_length=200)
+    co_last_name = models.CharField(max_length=200)
+    co_email = models.EmailField(max_length=200)
+    co_phone = models.CharField(max_length=11)
     def __str__(self):
-        return f"Captain: {self.captain_first_name} {self.captain_last_name} & {self.co_captain_first_name} {self.co_captain_last_name}"
+        return f"Captain: {self.first_name} {self.last_name} & {self.co_first_name} {self.co_last_name}"
     
-class TeamRoster(models.Model):
+class Player(models.Model):
     team_name = models.ForeignKey(TeamInfo, on_delete=models.PROTECT, default=None)
-    player_first_name = models.CharField(max_length=200)
-    player_last_name = models.CharField(max_length=200)
-    player_email = models.EmailField(max_length=200)
-    player_phone = models.CharField(max_length=11)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=11)
     def __str__(self):
-        return f"Team Roster: {self.player_first_name} {self.player_last_name}"
+        return f"Player: {self.first_name} {self.last_name}"
 
 class Waiver(models.Model):
     team_name = models.ForeignKey(TeamInfo, on_delete=models.PROTECT, default=None)
-    waiver_first_name = models.CharField(max_length=200)
-    waiver_last_name = models.CharField(max_length=200)
-    waiver_email = models.EmailField(max_length=200)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
     date = models.DateField()
     def __str__(self):
-        return self.waiver_first_name + " " + self.waiver_last_name
+        return self.first_name + " " + self.last_name
 
 
