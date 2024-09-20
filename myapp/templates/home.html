@@ -36,6 +36,28 @@
     .register {
         text-decoration: none;
     }
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+        .content {
+            flex-direction: column; /* Stacks the elements in a column */
+            align-items: center; /* Centers the items horizontally */
+        }
+        .left, .right {
+            width: 100%; /* Make both sections take up full width */
+            margin-bottom: 20px; /* Adds space between elements */
+            padding: 20px;
+            text-align: center;
+        }
+        .right video {
+            height: auto; /* Ensures video scales well */
+        }
+        h1 {
+            font-size:24px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
 
 </style>
 <div class="about_content">
