@@ -1,12 +1,55 @@
 {% extends 'base.html' %} 
 {% block content %} 
+{% load static %}
+<style>
+    .about_content {
+        text-align: center;
+        padding: 20px;
+        line-height: normal;
+    }
+    .about_content img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 20px;
+    }
+    .about_content a {
+        background-color: #ff4500;
+        color: white;
+        padding: 8px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .about_content a:hover {
+        background-color: #ff6347;
+    }
+    p {
+        font-size: 20px;
+    }
+    .images {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+</style>
 <div class="about_content">
-    <h1>About Us</h1>
-    <section>
-        <article>
-            <p>Welcome to our page.</p>
-        </article>
-    </section>
+    <h1>Join Our Volleyball Program!</h1>
+    <div class="images">
+        <div class="image">
+            <img src="{% static 'img/volley01.jpg' %}" alt="volley image"/>
+        </div>
+        <div class="image">
+            <img src="{% static 'img/volley03.jpg' %}" alt="volley image"/>
+        </div>
+        <div class="image">
+            <img src="{% static 'img/volley02.jpg' %}" alt="volley image"/>
+        </div>
+    </div>
+    <p>Are you ready to dive into the exciting world of volleyball? Our program offers basic training and open play for youths of all skill levels, from beginners eager to learn the fundamentals to experienced players looking to refine their skills.</p>
+    <p>Volleyball is not just a sport; it's a fantastic way to build teamwork, improve fitness, and make lifelong friendships. Whether you're spiking the ball over the net or working together in drills, every session is filled with fun, energy, and the thrill of competition.</p>
+    <p>Come be part of a supportive community that encourages growth and camaraderie. Grab your friends, lace up your shoes, and let’s hit the court!</p>
+    <p><a href="{% url 'registration' %}" >Sign up</a> today and experience the joy of volleyball!</p>
 </div>
 <!-- <p>{{about }}</p> -->
 {% endblock %}

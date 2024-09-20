@@ -1,12 +1,30 @@
 {% extends 'base.html' %} 
 {% block content %} 
-<div class="about_content">
-    <h1>Contact Page</h1>
-    <section>
-        <article>
-            <p>Welcome to our Contact page.</p>
-        </article>
-    </section>
+{% load static %}
+<style>
+    .contact_content {
+        background-image: url("{% static 'img/ball01.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        padding-top: 20px;
+    }
+    .des {
+        width: 60%;
+        text-align: center;
+        font-size: 22px;
+    }
+</style>
+<div class="contact_content">
+    <h1>Dig This Volleyball</h1>
+    <div class="des">
+        <p>Dig This Volleyball is a community of volleyball enthusiasts who are committed to supporting players of all levels. We have open plays geared towards beginner, intermediate to advance athletes. Our members come from diverse backgrounds, and range in age and experience from 12 year olds in our Youth Training classes to former National team players. </p>
+    </div>
 </div>
-<!-- <p>{{about }}</p> -->
 {% endblock %}

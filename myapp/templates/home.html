@@ -1,12 +1,86 @@
 {% extends 'base.html' %} 
 {% block content %} 
+{% load static %}
+<style>
+    header {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .content {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding-top: 20px;
+    }
+    .left {
+        background-color: rgb(247, 245, 231);
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 40px;
+    }
+    .right {
+        width: 56%;
+        margin-bottom: 40px;
+    }
+    video {
+        width: 100%;
+    }
+    p {
+        font-size: 18px;
+    }
+    button {
+        font-size: 18px;
+    }
+    .register {
+        text-decoration: none;
+    }
+
+</style>
 <div class="about_content">
-    <h1>Home Page</h1>
-    <section>
-        <article>
-            <p>Welcome to our Home page.</p>
-        </article>
-    </section>
+    <header>
+        <h1>Youth Program</h1>
+        <p>Basic training and Open play for youths at beginner and experienced levels</p>
+    </header>
+    <div class="content">
+        <div class="left">
+            <div>
+                <h1>Weekly Sessions</h1>
+                <div>
+                    <p>Saturday 11:00 am - 12:45pm</p>
+                    <p>Fundamentals</p>
+                </div>
+                <div>
+                    <p>Saturday 1:00 pm - 2:00 pm</p>
+                    <p>Open Play</p>
+                </div>
+            </div>
+            <div>
+                <h1>Location</h1>
+                <div>
+                    <p>New York</p>
+                    <address>8100 124th st New York NY 11000</address>
+                </div>
+            </div>
+            <div>
+                <h1>Youth Ages</h1>
+                <div>
+                    <p>Youth ages 12 - 15</p>
+                </div>
+            </div>
+            <p>Use links on calendar below or click on button to sign-up</p>
+            <button type="button">
+                <a href="{% url 'registration' %}" class="register" >Register</a>
+            </button>
+        </div>
+        <div class="right">
+            <video autoplay muted loop>
+                <source src="{% static 'img/game.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
 </div>
-<!-- <p>{{about }}</p> -->
+
 {% endblock %}

@@ -48,3 +48,12 @@ html, body {
 .nav-bar-menu:hover  {
     color:bisque;
 }
+
+/* .contact_content {
+    background-image: url("{% static 'img/ball02.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 20px;
+    color: white;
+} */
