@@ -28,6 +28,12 @@ def add_team(request):
         form = TeamForm()
     return render(request, 'team.html', {'form': form})
 
+def registration(request):
+    return render(request, "registration.html")
+
+def contact(request):
+    return render(request, "contact.html")
+
 def add_user(request):
     if request.method == "POST":
         form = UserForm(request.POST)
@@ -80,7 +86,7 @@ def team(request):
     user_data = User.objects.all()
     player_data = Player.objects.all()
     context = {'team': team_data, 'user': user_data, 'player': player_data}
-    return render(request, 'signUp.html', context)
+    return render(request, 'signup.html', context)
 
 def display_single_team(request, pk=None):
     team_data = get_object_or_404(TeamInfo, pk=pk)
